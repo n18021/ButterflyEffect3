@@ -1,0 +1,52 @@
+`npm install --save expo-font expo` 
+or this to to guarantee you're installing the right version of the package for your Expo version.
+`npm install expo-font`
+
+install navigation library
+`npm install --save react-navigation`
+`expo install react-navigation react-native-gesture-handler react-native-reanimated react-native-screens`
+// using "expo install" instead of "npm install" will install the packages that will work with your specific expo version.
+
+#109
+install StackNavigator
+`npm install --save react-navigation-stack`
+Also add this import in the file where you are using
+`import { createStackNavigator } from 'react-navigation-stack';`
+
+install TabsNavigator
+`npm install --save react-navigation-tabs`
+`import { createTabsNavigator } from 'react-navigation-tabs';`
+
+install DrawerNavigator
+`npm install --save react-navigation-drawer `
+`import { createDrawerNavigator } from 'react-navigation-drawer'; `
+
+// expo app includes by default
+`npm install --save react-native-screens`
+
+`npm install --save react-navigation-header-buttons`
+
+`npm install --save @expo/vector-icons`
+
+// when I got this error. -fontFamily "ionicons" is not a system font and has not been loaded through Font.loadAsync.
+`npm install --save expo`
+// OR
+The temporary solution is to remove this folder: node_modules/expo/node_modules/expo-font/
+
+// for android navigation tabs
+`npm install --save react-navigation-material-bottom-tabs`
+`npm install --save react-native-paper`
+
+
+// error
+Accessing view manager configs directly off UIManager via UIManager['getConstants'] is no longer supported. Use UIManager.getViewManagerConfig('getConstants') instead.
+
+package.jsonの中の、記述を下記のように変更する必要がある。
+
+"react-native-gesture-handler": "~1.3.0"
+"react-native-reanimated": "~1.1.0",
+その上で、
+
+node_modulesとpackage-lock.josnを一度削除して
+npm installを再実行
+そしてexpoを利用している場合、expo r -cとしてキャッシュをクリアしないと反映されない
